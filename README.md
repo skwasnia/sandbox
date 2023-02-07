@@ -16,6 +16,13 @@ cmake --build build
 ./build/hello_world
 ```
 
+## Dependency Graph
+
+```bash
+cmake -S . -B dot -G Ninja  --graphviz=dependency.dot
+dot -Tpng dependency.dot -o dependency.png
+```
+
 ## CMake Access Rights
 
 CMake has a great feature of controlling targets access rights. The target can
