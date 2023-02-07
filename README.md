@@ -23,6 +23,18 @@ cmake -S . -B dot -G Ninja  --graphviz=dependency.dot
 dot -Tpng dependency.dot -o dependency.png
 ```
 
+## Why CMake?
+
+<https://cmake.org/cmake/help/book/mastering-cmake/chapter/Why%20CMake.html#>
+
+The points worth noting are:
+
+* Build parameters in a simple, portable, text file format.
+* The ability to build in a directory tree outside of the source tree.
+* It generates project files for native build tools including Ninja.
+* The ability to create complex, custom commands.
+* The `targets` access rights feature.
+
 ## CMake Access Rights
 
 CMake has a great feature of controlling targets access rights. The target can
