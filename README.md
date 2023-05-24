@@ -95,6 +95,12 @@ As an alternative one can run the binaries directly:
 ./build_release/hello_world
 ```
 
+## Cleaning
+
+```bash
+cmake --build build --target clean
+```
+
 ## Dependency Graph
 
 ```bash
