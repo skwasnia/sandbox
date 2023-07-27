@@ -31,7 +31,7 @@ cmake --build build_debug --target help
 cmake --build build_debug --target <target_name>
 ```
 
-### Manual
+### Manual Build
 
 ```bash
 mkdir build
@@ -47,6 +47,45 @@ dir binary:
 ```bash
  cmake --build <build_folder> --target run
 ```
+
+Note that `run` target depends on the executable target, thus running it will
+trigger the build as well:
+
+```bash
+$ cmake --preset debug
+
+Preset CMake variables:
+
+  CMAKE_BUILD_TYPE="Debug"
+
+-- The C compiler identification is GNU 4.8.5
+-- The CXX compiler identification is GNU 4.8.5
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /nfs/site/home/skwasnia/workarea/cmake_sandbox/build_debug
+
+$ cmake --build build_debug --target run
+[10/10] cd /nfs/site/home/skwasnia/workarea/cmake_sandbox/build_debug && /nfs/site/home/skwasnia/workarea/cmake_sandbox/build_debug/hello_world
+Hello World
+
+Interface Target
+
+Public Target and Public Target 2 and Private Target
+
+Public Target 2
+```
+
+### Running Manually
 
 As an alternative one can run the binaries directly:
 
