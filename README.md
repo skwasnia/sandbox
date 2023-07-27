@@ -21,6 +21,16 @@ cmake --preset debug
 cmake --preset release
 ```
 
+### Building Targets
+
+```bash
+# Get list of targets
+cmake --build build_debug --target help
+
+# Build specific target
+cmake --build build_debug --target <target_name>
+```
+
 ### Manual
 
 ```bash
