@@ -12,3 +12,9 @@ add_executable(hello_world main.cpp)
 
 target_link_libraries(hello_world interfaceTarget)
 target_link_libraries(hello_world publicTarget)
+
+add_custom_target(run
+    COMMAND ${CMAKE_BINARY_DIR}/hello_world
+    DEPENDS hello_world
+    WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+)

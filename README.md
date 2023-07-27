@@ -41,6 +41,15 @@ cmake --build build
 
 ## Running
 
+For convenience, there is a custom `run` target that will run a specific build
+dir binary:
+
+```bash
+ cmake --build <build_folder> --target run
+```
+
+As an alternative one can run the binaries directly:
+
 ```bash
 ./build_debug/hello_world
 # OR
