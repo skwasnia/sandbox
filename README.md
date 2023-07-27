@@ -4,6 +4,25 @@ This project is a sandbox for exercising C/C++ and CMake topics.
 
 ## Building
 
+### Presets
+
+```bash
+$ cmake --list-presets
+Available configure presets:
+
+  "debug"   - Debug default config
+  "release" - Release default config
+  "dot"     - Dependency Graph Target
+```
+
+```bash
+cmake --preset debug
+# OR
+cmake --preset release
+```
+
+### Manual
+
 ```bash
 mkdir build
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
@@ -13,13 +32,18 @@ cmake --build build
 ## Running
 
 ```bash
-./build/hello_world
+./build_debug/hello_world
+# OR
+./build_release/hello_world
 ```
 
 ## Dependency Graph
 
 ```bash
-cmake -S . -B dot -G Ninja  --graphviz=dependency.dot
+cmake --preset dot --graphviz=dependency.dot
+# OR
+cmake -S . -B dot -G Ninja --graphviz=dependency.dot
+
 dot -Tpng dependency.dot -o dependency.png
 ```
 

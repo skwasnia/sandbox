@@ -1,0 +1,51 @@
+{
+    "version": 2,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 20,
+      "patch": 0
+    },
+    "configurePresets": [
+      {
+        "name": "debug",
+        "displayName": "Debug default config",
+        "description": "Debug build using Ninja generator",
+        "generator": "Ninja",
+        "binaryDir": "build_debug",
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Debug"
+        }
+      },
+      {
+        "name": "release",
+        "displayName": "Release default config",
+        "description": "Release build using Ninja generator",
+        "generator": "Ninja",
+        "binaryDir": "build_release",
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release"
+        }
+      },
+      {
+        "name": "dot",
+        "displayName": "Dependency Graph Target",
+        "description": "Used for generation of the dependency graphs",
+        "generator": "Ninja",
+        "binaryDir": "build_dot"
+      }
+    ],
+    "buildPresets": [
+      {
+        "name": "debug",
+        "configurePreset": "debug"
+      },
+      {
+        "name": "release",
+        "configurePreset": "release"
+      },
+      {
+        "name": "dot",
+        "configurePreset": "dot"
+      }
+    ]
+}
